@@ -1,6 +1,9 @@
 console.log("Hello World");
 
 const form = document.querySelector('form');
+const loadingElement = document.querySelector('.loading');
+
+loadingElement.style.display = 'none';
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -13,4 +16,6 @@ form.addEventListener('submit', (event) => {
         content
     };
     console.log(mew);
+    form.style.display = 'none';
+    loadingElement.style.display = '';
 });
