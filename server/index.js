@@ -1,9 +1,10 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); //middleware
 
 const app = express();
 
 app.use(cors());
+app.use(express.json()); //midde ware that parse incoming data
 
 app.get('/', (req, res) => {
     res.json({
@@ -12,7 +13,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/mews', (req, res) => {
-    console.log(req.body);
+    if(isValidMew(req.body)) {
+        //insert into db
+    }
 });
 
 app.listen(5000, () => {
