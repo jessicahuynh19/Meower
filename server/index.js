@@ -13,8 +13,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/mews', (req, res) => {
-    if(isValidMew(req.body)) {
+    if (isValidMew(req.body)) {
         //insert into db
+    } else {
+        res.status(422);
+        res.json({
+            messsage: 'Hey! Name and Content are required!'
+        });
+
     }
 });
 
