@@ -1,6 +1,6 @@
 console.log("Hello World");
 
-const form = document.querySelector('form');
+const form = document.querySelector('form'); //grabbing element on the page
 const loadingElement = document.querySelector('.loading');
 
 loadingElement.style.display = 'none';
