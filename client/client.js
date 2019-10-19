@@ -30,5 +30,8 @@ form.addEventListener('submit', (event) => {
             //this tells in the body of the server that in the body of the request is JSON, using JSON
             //.stringify will the object and turn it in JSON parse the data
         }
-    });
+    }).then(response => response.json())
+      .then(createdMew => {
+
+      });
 });
