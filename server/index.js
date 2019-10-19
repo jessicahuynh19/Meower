@@ -4,7 +4,8 @@ const monk = require('monk');
 
 const app = express();
 
-const db = monk('localhost/meower')
+const db = monk('localhost/meower');
+const mews = db.get('mews');
 
 app.use(cors());
 app.use(express.json()); //middle ware that parse incoming data
