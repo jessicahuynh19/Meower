@@ -4,7 +4,7 @@ const cors = require('cors'); //middleware
 const app = express();
 
 app.use(cors());
-app.use(express.json()); //midde ware that parse incoming data
+app.use(express.json()); //middle ware that parse incoming data
 
 app.get('/', (req, res) => {
     res.json({
@@ -12,11 +12,15 @@ app.get('/', (req, res) => {
     });
 });
 
+function isValidMew(mew) {
+    return mew.name && mew.name.toString().trim() !=='' && mew.content && mew.content.toString().trim() !=='';
+}
+
 app.post('/mews', (req, res) => {
     if (isValidMew(req.body)) {
         //insert into db
     } else {
-        res.status(422);
+        res.status(422); 
         res.json({
             messsage: 'Hey! Name and Content are required!'
         });
