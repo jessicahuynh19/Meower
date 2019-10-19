@@ -27,7 +27,11 @@ app.post('/mews', (req, res) => {
             name: req.body.name.toString(),
             content: req.body.content.toString()
         };
-        console.log(mew);
+        mews
+            .insert(mew)
+            .then(createdMew => {
+
+            });
     } else {
         res.status(422); 
         res.json({
