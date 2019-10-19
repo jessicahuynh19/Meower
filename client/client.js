@@ -32,6 +32,7 @@ form.addEventListener('submit', (event) => {
         }
     }).then(response => response.json())
       .then(createdMew => {
-
+        console.log(createdMew);
+        loadingElement.style.display = 'none';
       });
 });
