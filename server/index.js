@@ -19,6 +19,10 @@ function isValidMew(mew) {
 app.post('/mews', (req, res) => {
     if (isValidMew(req.body)) {
         //insert into db
+        const mew = {
+            name: req.body.name.toString(),
+            content: req.body.content.toString()
+        };
     } else {
         res.status(422); 
         res.json({
