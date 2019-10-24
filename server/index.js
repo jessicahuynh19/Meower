@@ -36,7 +36,7 @@ app.post('/mews', (req, res) => {
     } else {
         res.status(422); 
         res.json({
-            messsage: 'Hey! Name and Content are required!'
+            messsage: 'Make sure you add  Name and Content are required!'
         });
 
     }
