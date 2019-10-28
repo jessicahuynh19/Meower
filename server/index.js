@@ -12,7 +12,7 @@ app.use(express.json()); //middle ware that parse incoming data
 
 app.get('/', (req, res) => {
     res.json({
-        messsage: 'Meower!!!'
+        messsage: 'Meower!!'
     });
 });
 
